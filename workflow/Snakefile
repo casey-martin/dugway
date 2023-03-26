@@ -1,0 +1,7 @@
+rule doc2table:
+    input:
+        "./data/dugway.pdf"
+    output:
+        "./data/dugway_table.tsv"
+    shell:
+        "python dugway_parser.py --input {input} --output {output}"
