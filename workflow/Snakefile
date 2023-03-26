@@ -1,7 +1,16 @@
 rule doc2table:
     input:
-        "./data/dugway.pdf"
+        "data/dugway.pdf"
     output:
-        "./data/dugway_table.tsv"
+        "data/dugway_table.tsv"
     shell:
         "python dugway_parser.py --input {input} --output {output}"
+
+
+rule table_embedding:
+    input:
+        "data/dugway_table.tsv"
+    output:
+        "data/embeddings.tsv"
+    shell:
+        "python embedding_gen.py --input {input} --output {output}"

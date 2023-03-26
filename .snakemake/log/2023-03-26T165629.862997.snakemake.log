@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule doc2table in file /home/operon/scripts/dugway/workflow/Snakefile, line 1:
+Missing input files for rule doc2table:
+    output: /data/dugway_table.tsv
+    affected files:
+        /data/dugway.pdf

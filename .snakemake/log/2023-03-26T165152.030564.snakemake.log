@@ -1,0 +1,2 @@
+SyntaxError in file /home/operon/scripts/dugway/workflow/Snakefile, line 15:
+Command must be given as string after the shell keyword. (Snakefile, line 15)
