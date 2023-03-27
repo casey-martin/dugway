@@ -1,0 +1,28 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count    min threads    max threads
+-----------------  -------  -------------  -------------
+all                      1              1              1
+cluster_detection        1              1              1
+total                    2              1              1
+
+Select jobs to execute...
+
+[Mon Mar 27 15:59:58 2023]
+rule cluster_detection:
+    input: data/embeddings/umap_embeddings_5d.tsv
+    output: data/embeddings/umap_embeddings_5d_clusters.tsv
+    jobid: 1
+    reason: Missing output files: data/embeddings/umap_embeddings_5d_clusters.tsv
+    resources: tmpdir=/tmp
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule cluster_detection in file /home/operon/scripts/dugway/workflow/Snakefile, line 31:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+data/embeddings/umap_embeddings_5d_clusters.tsv
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-03-27T155958.615486.snakemake.log

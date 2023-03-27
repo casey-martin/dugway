@@ -1,7 +1,6 @@
 rule all:
     input:
-        "data/embeddings/umap_embeddings_2d.tsv",
-        "data/embeddings/umap_embeddings_5d.tsv"
+        "data/embeddings/umap_embeddings_5d_clusters.tsv"
 
 rule doc2table:
     input:
@@ -28,3 +27,11 @@ rule umap_embedding:
         umap5d = "data/embeddings/umap_embeddings_5d.tsv"
     shell:
         "python umap_embedding.py --input {input} --output-2d {output.umap2d} --output-5d {output.umap5d}"
+
+rule cluster_detection:
+    input:
+        "data/embeddings/umap_embeddings_5d.tsv"
+    output:
+        "data/embeddings/umap_embeddings_5d_clusters.tsv"
+    shell:
+        "python cluster_detection.py --input {input} --output {output}"

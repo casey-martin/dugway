@@ -1,0 +1,2 @@
+SyntaxError in file /home/operon/scripts/dugway/workflow/Snakefile, line 7:
+EOL while scanning string literal

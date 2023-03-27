@@ -34,17 +34,16 @@ def elements2df(elements):
 
     return(out_df)
 
-def main(document, outname, sep):
-    
-    elements = partition(filename=document)
-    df = elements2df(elements)
-    df.to_csv(outname, sep=sep, index=False)
-    
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", help="Document filepath")
     parser.add_argument("--output", help="Output filepath")
     parser.add_argument("--sep", default='\t', help="Output delimiter")
     args = parser.parse_args()
-
-    main(document=args.input, outname=args.output, sep=args.sep)
+   
+    elements = partition(filename=args.input)
+    df = elements2df(elements)
+    df.to_csv(args.output, sep=args.sep, index=False)
+    
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule cluster_detection in file /home/operon/scripts/dugway/workflow/Snakefile, line 31:
+Missing input files for rule cluster_detection:
+    output: data/embeddings/umap_embedding_5d_clusters.tsv
+    affected files:
+        data/embeddings/umap_embedding_5d.tsv
