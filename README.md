@@ -1,2 +1,2 @@
 # Cold War CBN
-Documentation goes here.
+This repository contains a corpus of publication titles from the American, Canadian, and British bioweapons programs between 1961 and 1966. This corpus was compiled by Government Attic through a FOIA request. We analyze the clustering of document titles and extract keywords to identify various topics. We intend to identiify keywords that are differentially enriched by document classification (unclassified, restricted, confidential, etc.). We also plan to search for keyword enrichment by Institution.
