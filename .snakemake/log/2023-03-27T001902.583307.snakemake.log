@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /home/operon/scripts/dugway/workflow/Snakefile, line 1:
+Missing input files for rule all:
+    affected files:
+        data/embeddings/umap_embeddings_2d.tsvdata/embeddings/umap_embeddings_5d.tsv

@@ -1,3 +1,8 @@
+rule all:
+    input:
+        "data/embeddings/umap_embeddings_2d.tsv",
+        "data/embeddings/umap_embeddings_5d.tsv"
+
 rule doc2table:
     input:
         "data/dugway.pdf"
@@ -11,6 +16,15 @@ rule table_embedding:
     input:
         "data/dugway_table.tsv"
     output:
-        "data/embeddings.tsv"
+        "data/embeddings/embeddings.tsv"
     shell:
         "python embedding_gen.py --input {input} --output {output}"
+
+rule umap_embedding:
+    input:
+        "data/embeddings/embeddings.tsv"
+    output:
+        umap2d = "data/embeddings/umap_embeddings_2d.tsv",
+        umap5d = "data/embeddings/umap_embeddings_5d.tsv"
+    shell:
+        "python umap_embedding.py --input {input} --output-2d {output.umap2d} --output-5d {output.umap5d}"

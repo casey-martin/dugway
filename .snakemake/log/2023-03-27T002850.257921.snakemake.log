@@ -1,0 +1,33 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count    min threads    max threads
+--------------  -------  -------------  -------------
+all                   1              1              1
+umap_embedding        1              1              1
+total                 2              1              1
+
+Select jobs to execute...
+
+[Mon Mar 27 00:28:50 2023]
+rule umap_embedding:
+    input: data/embeddings/embeddings.tsv
+    output: data/embeddings/umap_embeddings_2d.tsv, data/embeddings/umap_embeddings_5d.tsv
+    jobid: 1
+    reason: Missing output files: data/embeddings/umap_embeddings_2d.tsv, data/embeddings/umap_embeddings_5d.tsv
+    resources: tmpdir=/tmp
+
+[Mon Mar 27 00:29:14 2023]
+Error in rule umap_embedding:
+    jobid: 1
+    input: data/embeddings/embeddings.tsv
+    output: data/embeddings/umap_embeddings_2d.tsv, data/embeddings/umap_embeddings_5d.tsv
+    shell:
+        python umap_embedding.py --input data/embeddings/embeddings.tsv --output-2d data/embeddings/umap_embeddings_2d.tsv --output-5d data/embeddings/umap_embeddings_5d.tsv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-03-27T002850.257921.snakemake.log
